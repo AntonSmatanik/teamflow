@@ -7,6 +7,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { MessagesSquare } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useState } from "react";
+import ReactionsBar from "../reaction/ReactionsBar";
 import MessageHoverToolbar from "../toolbar";
 import { EditMessage } from "../toolbar/EditMessage";
 
@@ -80,6 +81,11 @@ const MessageItem = ({ currentUserId, message }: MessageItemProps) => {
                 />
               </div>
             )}
+
+            <ReactionsBar
+              messageId={message.id}
+              reactions={message.reactions}
+            />
 
             {message.replyCount > 0 && (
               <button

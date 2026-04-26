@@ -1,3 +1,4 @@
+import { GroupReactionSchemaType } from "@/app/schemas/message";
 import { InfiniteData } from "@tanstack/react-query";
 import { Message } from "./generated/prisma/client";
 
@@ -10,5 +11,5 @@ export type InfiniteMessages = InfiniteData<MessagePage>;
 
 export type MessageListItem = Message & {
   replyCount: number;
-  // reactions: GroupReactionSchemaType[];
+  reactions: GroupReactionSchemaType[];
 };

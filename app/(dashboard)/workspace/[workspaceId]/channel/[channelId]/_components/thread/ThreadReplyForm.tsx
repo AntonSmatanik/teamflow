@@ -66,6 +66,7 @@ const ThreadReplyForm = ({ threadId, user }: ThreadReplyFormProps) => {
           threadId: data.threadId!,
           imageUrl: data.imageUrl ?? null,
           replyCount: 0,
+          reactions: [],
         };
 
         queryClient.setQueryData(listOptions.queryKey, (old) => {
